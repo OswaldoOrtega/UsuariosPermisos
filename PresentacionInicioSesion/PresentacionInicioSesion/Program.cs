@@ -10,7 +10,7 @@ namespace PresentacionInicioSesion
     {
         static void Main()
         {
-            
+             
         }
     }
 }

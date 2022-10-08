@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConectarBd;
+using AccesosDatos;
 using Entidades;
-namespace AccesosDatos
+using Crud;
+using System.Windows.Forms;
+
+namespace Manejadores
 {
-    public class AccesoDatosModuloTaller : IEntidades
+    public class ManejadorModuloTaller : IManejador
     {
-        Base b = new Base("localhost", "root", "", "Permisosusuarios", 3306);
+        AccesoDatosModuloTaller amt = new AccesoDatosModuloTaller();
+        Grafico g = new Grafico();
         public void Borrar(dynamic Entidad)
         {
             throw new NotImplementedException();
@@ -18,8 +21,8 @@ namespace AccesosDatos
 
         public void Guardar(dynamic Entidad)
         {
-           b.comando(string.Format("call insertarmodulotaller({0},'{1}','{2}','{3}','{4}')",
-               Entidad.Codigoherramientas,Entidad.Nombre,Entidad.Medida,Entidad.Marca,Entidad.Descripcion));
+            amt.Guardar(Entidad);
+            g.Mensaje("Herramienta Guardada","!ATENCION",MessageBoxIcon.Information);
         }
 
         public void Modificar(dynamic Entidad)
@@ -27,7 +30,7 @@ namespace AccesosDatos
             throw new NotImplementedException();
         }
 
-        public DataSet Mostrar(string filtro)
+        public void Mostrar(DataGridView tabla, string filtro)
         {
             throw new NotImplementedException();
         }

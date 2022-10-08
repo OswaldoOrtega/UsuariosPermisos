@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConectarBd">
+      <HintPath>..\..\..\Semestre 3\Semestre 4\Topicos Avanzados de Programacion\ConectarBd\ConectarBd\bin\Debug\ConectarBd.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,9 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatosModuloRefaccion.cs" />
+    <Compile Include="AccesoDatosModuloTaller.cs" />
+    <Compile Include="AccesoDatosPermisosModuloRefaccion.cs" />
+    <Compile Include="AccesoDatosPermisosModuloTaller.cs" />
     <Compile Include="AccesoDatosUsuarios.cs" />
     <Compile Include="IEntidades.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{59c829f8-4249-403c-8960-9528494ab434}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

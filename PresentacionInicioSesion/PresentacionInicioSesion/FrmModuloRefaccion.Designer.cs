@@ -157,6 +157,7 @@ namespace PresentacionInicioSesion
             this.Name = "FrmModuloRefaccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmModuloRefaccion";
+            this.Load += new System.EventHandler(this.FrmModuloRefaccion_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRefacciones)).EndInit();

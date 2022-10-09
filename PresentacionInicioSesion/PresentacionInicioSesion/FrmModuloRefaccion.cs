@@ -15,10 +15,12 @@ namespace PresentacionInicioSesion
     {
         ManejadorModuloRefaccion mmr = new ManejadorModuloRefaccion();
         public static ModuloRefaccion mr = new ModuloRefaccion(0,"","","");
+        public static PermisosModuloRefaccion p = new PermisosModuloRefaccion("",0,true, true, false, false);
         int fila = 0, col = 0;
         public FrmModuloRefaccion()
         {
             InitializeComponent();
+            
         }
         void controlarbotones(bool añadir, bool Eliminar, bool Modificar)
         {
@@ -26,7 +28,45 @@ namespace PresentacionInicioSesion
             btnEliminar.Enabled = Eliminar;
             btnModificar.Enabled = Modificar;
         }
-
+        public void Permisos()
+        {
+            if (p.Escritura == true)
+            {
+                ControlarBotones(true);
+            }
+            else if (p.Escritura == false)
+            {
+                ControlarBotones(false);
+            }
+            if (p.Eliminacion == true)
+            {
+                ControlarBotones2(true);
+            }
+            else if (p.Eliminacion == false)
+            {
+                ControlarBotones2(false);
+            }
+            if (p.Actualizacion == true)
+            {
+                ControlarBotones3(true);
+            }
+            else if (p.Actualizacion == false)
+            {
+                ControlarBotones3(false);
+            }
+        }
+        public void ControlarBotones(bool nuevo)
+        {
+            btnAñadir.Enabled = nuevo;
+        }
+        public void ControlarBotones2(bool eliminar)
+        {
+            btnEliminar.Enabled = eliminar;
+        }
+        public void ControlarBotones3(bool modificar)
+        {
+            btnModificar.Enabled = modificar;
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
@@ -65,6 +105,11 @@ namespace PresentacionInicioSesion
         {
             fila = e.RowIndex;
             col = e.ColumnIndex;
+        }
+
+        private void FrmModuloRefaccion_Load(object sender, EventArgs e)
+        {
+            Permisos();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

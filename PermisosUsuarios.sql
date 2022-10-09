@@ -13,6 +13,8 @@ nombre VARCHAR(100),
 descripcion VARCHAR(200),
 marca VARCHAR(100));
 
+SELECT * FROM modulotaller;
+
 CREATE TABLE modulotaller(
 codigoherramientas BIGINT PRIMARY KEY,
 nombre VARCHAR(100),
@@ -20,12 +22,10 @@ medida VARCHAR(100),
 marca VARCHAR(100),
 descripcion VARCHAR(200));
 
-CREATE TABLE PermisosRefaccion(
+CREATE TABLE permisosrefaccion(
+idp VARCHAR(100) PRIMARY KEY,
 FKidusuario INT,
-FKcodigobarras BIGINT,
 FOREIGN KEY(FKidusuario) REFERENCES usuarios(idusuario),
-FOREIGN KEY(FKcodigobarras) REFERENCES modulorefaccion(codigobarras),
-PRIMARY KEY (FKidusuario,FKcodigobarras),
 lectura BOOL,
 escritura BOOL,
 eliminacion BOOL,
@@ -156,22 +156,21 @@ END;;
 /*--------------------------------------PORCEDURE DE PERMISOSMODULOREFACCIONES---------------------------------------------- */
 delimiter ;; 
 CREATE PROCEDURE insertarpermisosrefaccion(
+IN _idp VARCHAR(100),
 IN _FKidusuario INT,
-IN _FKcodigobarras BIGINT,
 IN _lectura BOOL,
 IN _escritura BOOL,
 IN _eliminacion BOOL,
 IN _actualizacion BOOL)
 BEGIN 
-INSERT INTO permisosrefaccion VALUES(_FKidusuario,_FKcodigobarras,_lectura,_escritura,_eliminacion,_actualizacion);
+INSERT INTO permisosrefaccion VALUES(_idp,_FKidusuario,_lectura,_escritura,_eliminacion,_actualizacion);
 END;;
 
 delimiter ;; 
 CREATE PROCEDURE deletepermisosrefaccion(
-IN _FKidusuario INT,
-IN _FKcodigobarras BIGINT)
+IN _idp VARCHAR(100))
 BEGIN 
-DELETE FROM permisosrefaccion WHERE FKidusuario = _FKidusuario AND FKcodigobarras = _FKcodigobarras;
+DELETE FROM permisosrefaccion WHERE idp = _idp;
 END;;
 
 delimiter ;; 
@@ -179,21 +178,21 @@ CREATE PROCEDURE showpermisosrefaccion(
 _filtro VARCHAR(100))
 BEGIN 
 SELECT u.nombre,u.apellidop,u.apellidom,p.lectura,p.escritura,p.eliminacion,p.actualizacion 
-FROM permisosrefaccion as p ,usuarios AS u, modulorefaccion as m
-WHERE p.FKidusuario=u.idusuario AND p.FKcodigobarras = m.codigobarras AND u.nombre LIKE _filtro;
+FROM permisosrefaccion as p ,usuarios AS u
+WHERE p.FKidusuario=u.idusuario AND u.nombre LIKE _filtro;
 END;;
 
 delimiter ;; 
 CREATE PROCEDURE modificarpermisosrefaccion(
+IN _idp VARCHAR(100),
 IN _FKidusuario INT,
-IN _FKcodigobarras BIGINT,
 IN _lectura BOOL,
 IN _escritura BOOL,
 IN _eliminacion BOOL,
 IN _actualizacion BOOL)
 BEGIN
 UPDATE permisosrefaccion SET lectura=_lectura,escritura=_escritura,eliminacion=_eliminacion,actualizacion=_actualizacion WHERE 
-FKidusuario = _FKidusuario AND FKcodigobarras = _FKcodigobarras;
+FKidusuario = _FKidusuario AND idp= _idp;
 END;;
 
 /*--------------------------------------PORCEDURE DE PERMISOSMODULOTALLER---------------------------------------------- */
@@ -223,7 +222,8 @@ _filtro VARCHAR(100))
 BEGIN 
 SELECT u.nombre,u.apellidop,u.apellidom,t.lectura,t.escritura,t.eliminacion,t.actualizacion 
 FROM permisosTaller AS t,usuarios as u,modulotaller m 
-WHERE  t.FKidusuario = u.idusuario AND t.FKcodigoherramientas = m.codigoherramientas AND u.nombre LIKE _filtro;
+WHERE  t.FKidusuario = u.idusuario AND t.FKcodigoherramientas = m.codigoherramientas AND 
+u.nombre LIKE _filtro;
 END;;
 
 delimiter ;;

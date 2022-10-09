@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +43,110 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmModuloRefaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuloRefaccion.Designer.cs">
+      <DependentUpon>FrmModuloRefaccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuloRefaccionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuloRefaccionAdd.Designer.cs">
+      <DependentUpon>FrmModuloRefaccionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuloTaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuloTaller.Designer.cs">
+      <DependentUpon>FrmModuloTaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuloTallerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuloTallerAdd.Designer.cs">
+      <DependentUpon>FrmModuloTallerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPermisoModuloRefacciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPermisoModuloRefacciones.Designer.cs">
+      <DependentUpon>FrmPermisoModuloRefacciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPermisoModuloRefaccionesAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPermisoModuloRefaccionesAdd.Designer.cs">
+      <DependentUpon>FrmPermisoModuloRefaccionesAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPermisosModuloTaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPermisosModuloTaller.Designer.cs">
+      <DependentUpon>FrmPermisosModuloTaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPermisosModuloTallerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPermisosModuloTallerAdd.Designer.cs">
+      <DependentUpon>FrmPermisosModuloTallerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuariosAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsuariosAdd.Designer.cs">
+      <DependentUpon>FrmUsuariosAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{59c829f8-4249-403c-8960-9528494ab434}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
+      <Project>{aed07025-3a5a-4a38-9df5-813f421c9753}</Project>
+      <Name>Manejadores</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmModuloRefaccion.resx">
+      <DependentUpon>FrmModuloRefaccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuloRefaccionAdd.resx">
+      <DependentUpon>FrmModuloRefaccionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuloTaller.resx">
+      <DependentUpon>FrmModuloTaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuloTallerAdd.resx">
+      <DependentUpon>FrmModuloTallerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPermisoModuloRefacciones.resx">
+      <DependentUpon>FrmPermisoModuloRefacciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuariosAdd.resx">
+      <DependentUpon>FrmUsuariosAdd.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

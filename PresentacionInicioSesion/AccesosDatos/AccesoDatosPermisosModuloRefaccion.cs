@@ -18,8 +18,8 @@ namespace AccesosDatos
 
         public void Guardar(dynamic Entidad)
         {
-            b.comando(string.Format("call insertarpermisosrefaccion({0},{1},{2},{3},{4},{5})",
-                Entidad.FKidusuario,Entidad.FKcodigobarras,Entidad.Lectura,
+            b.comando(string.Format("call insertarpermisosrefaccion('{0}',{1},{2},{3},{4},{5})",
+                Entidad.Idp,Entidad.FKidusuario,Entidad.Lectura,
                 Entidad.Escritura,Entidad.Eliminacion,Entidad.Actualizacion));
         }
 
@@ -30,7 +30,7 @@ namespace AccesosDatos
 
         public DataSet Mostrar(string filtro)
         {
-            throw new NotImplementedException();
+            return b.Obtener(string.Format("call showpermisosmodulorefaccion('%{0}%')",filtro),"Usuarios");
         }
     }
 }

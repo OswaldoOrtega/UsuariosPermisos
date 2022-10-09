@@ -13,7 +13,7 @@ namespace AccesosDatos
         Base b = new Base("localhost","root","", "Permisosusuarios",3306);
         public void Borrar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            b.comando(string.Format("call deletemodulorefaccion({0})",Entidad.Codigobarras));
         }
 
         public void Guardar(dynamic Entidad)
@@ -24,12 +24,13 @@ namespace AccesosDatos
 
         public void Modificar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            b.comando(string.Format("call modificarmodulorefaccion({0},'{1}','{2}','{3}')",
+               Entidad.Codigobarras ,Entidad.Nombre, Entidad.Descripcion, Entidad.Marca));
         }
 
         public DataSet Mostrar(string filtro)
         {
-            throw new NotImplementedException();
+            return b.Obtener(string.Format("call showmodulorefaccion('%{0}%')",filtro), "ModuloRefaccion");
         }
     }
 }

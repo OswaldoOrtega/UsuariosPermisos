@@ -37,8 +37,6 @@ namespace PresentacionInicioSesion
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txt = new System.Windows.Forms.Label();
-            this.txtMedida = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -118,25 +116,9 @@ namespace PresentacionInicioSesion
             this.txt.TabIndex = 5;
             this.txt.Text = "Nombre";
             // 
-            // txtMedida
-            // 
-            this.txtMedida.Location = new System.Drawing.Point(16, 192);
-            this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(192, 26);
-            this.txtMedida.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Medida";
-            // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(248, 192);
+            this.txtMarca.Location = new System.Drawing.Point(16, 192);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(379, 26);
             this.txtMarca.TabIndex = 10;
@@ -144,7 +126,7 @@ namespace PresentacionInicioSesion
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(244, 169);
+            this.label5.Location = new System.Drawing.Point(12, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 20);
             this.label5.TabIndex = 9;
@@ -176,8 +158,6 @@ namespace PresentacionInicioSesion
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtMedida);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txt);
             this.Controls.Add(this.btnAgregar);
@@ -207,8 +187,6 @@ namespace PresentacionInicioSesion
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label txt;
-        private System.Windows.Forms.TextBox txtMedida;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDescripcion;

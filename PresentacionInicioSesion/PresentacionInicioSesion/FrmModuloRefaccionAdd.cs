@@ -18,6 +18,7 @@ namespace PresentacionInicioSesion
         {
             InitializeComponent();
             mr = new ManejadorModuloRefaccion();
+          
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -27,7 +28,11 @@ namespace PresentacionInicioSesion
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            mr.Guardar(new ModuloRefaccion(long.Parse(txtCodigo.Text.ToString()),
+                txtNombre.Text,txtDescripcion.Text,txtMarca.Text));
+            Close();
         }
+
+      
     }
 }

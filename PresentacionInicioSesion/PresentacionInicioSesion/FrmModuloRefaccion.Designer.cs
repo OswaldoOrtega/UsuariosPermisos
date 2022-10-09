@@ -30,11 +30,11 @@ namespace PresentacionInicioSesion
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnAñadir = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,6 +53,26 @@ namespace PresentacionInicioSesion
             this.panel1.Size = new System.Drawing.Size(738, 82);
             this.panel1.TabIndex = 0;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(704, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(31, 29);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "X";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(228, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(283, 31);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Modulo de Refaciones";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -68,6 +88,7 @@ namespace PresentacionInicioSesion
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(602, 26);
             this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnAñadir
             // 
@@ -79,26 +100,6 @@ namespace PresentacionInicioSesion
             this.btnAñadir.UseVisualStyleBackColor = true;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(228, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(283, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Modulo de Refaciones";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(704, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(31, 29);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "X";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(520, 394);
@@ -107,6 +108,7 @@ namespace PresentacionInicioSesion
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -116,6 +118,7 @@ namespace PresentacionInicioSesion
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // panel2
             // 
@@ -132,6 +135,8 @@ namespace PresentacionInicioSesion
             this.dtgRefacciones.Name = "dtgRefacciones";
             this.dtgRefacciones.Size = new System.Drawing.Size(703, 204);
             this.dtgRefacciones.TabIndex = 8;
+            this.dtgRefacciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgRefacciones_CellClick);
+            this.dtgRefacciones.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgRefacciones_CellEnter);
             // 
             // FrmModuloRefaccion
             // 

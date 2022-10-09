@@ -16,7 +16,10 @@ namespace Manejadores
         Grafico g = new Grafico();
         public void Borrar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            DialogResult rs = MessageBox.Show(string.Format("¿Estás seguro de borrar {0}", Entidad.Nombre),
+                "!ATENCION",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+                amr.Borrar(Entidad);
         }
 
         public void Guardar(dynamic Entidad)
@@ -27,12 +30,15 @@ namespace Manejadores
 
         public void Modificar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            amr.Modificar(Entidad);
+            g.Mensaje("Refaccion Modificada", "!ATENCION", MessageBoxIcon.Information);
         }
 
         public void Mostrar(DataGridView tabla, string filtro)
         {
-            throw new NotImplementedException();
+            tabla.Columns.Clear();
+            tabla.RowTemplate.Height = 30;
+            tabla.DataSource =amr.Mostrar(filtro).Tables["ModuloRefaccion"];
         }
     }
 }

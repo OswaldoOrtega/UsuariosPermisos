@@ -61,6 +61,7 @@ namespace PresentacionInicioSesion
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label2
             // 
@@ -114,6 +115,7 @@ namespace PresentacionInicioSesion
             this.btnAñadir.TabIndex = 11;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // txtBuscar
             // 

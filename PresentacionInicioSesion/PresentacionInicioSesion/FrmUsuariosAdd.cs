@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Manejadores;
+using Entidades;
 namespace PresentacionInicioSesion
 {
     public partial class FrmUsuariosAdd : Form
@@ -15,6 +16,11 @@ namespace PresentacionInicioSesion
         public FrmUsuariosAdd()
         {
             InitializeComponent();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

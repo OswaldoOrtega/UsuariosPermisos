@@ -32,7 +32,16 @@ namespace Manejadores
 
         public void Mostrar(DataGridView tabla, string filtro)
         {
-            throw new NotImplementedException();
+            tabla.Columns.Clear();
+            tabla.RowTemplate.Height = 30;
+            tabla.DataSource = apmr.Mostrar(filtro).Tables["Usuarios"];
+            
+        }
+        public void ExtraerUsuario(ComboBox caja)
+        {
+            caja.DataSource = apmr.Mostrar("").Tables["usuarios"];
+            caja.DisplayMember = "Nombre";
+            caja.ValueMember = "idusuario";
         }
     }
 }

@@ -29,53 +29,22 @@ namespace PresentacionInicioSesion
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtgRefacciones = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgRefacciones)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMedida = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dtgRefacciones
-            // 
-            this.dtgRefacciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgRefacciones.Location = new System.Drawing.Point(12, 142);
-            this.dtgRefacciones.Name = "dtgRefacciones";
-            this.dtgRefacciones.Size = new System.Drawing.Size(703, 204);
-            this.dtgRefacciones.TabIndex = 15;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.panel2.Location = new System.Drawing.Point(50, 365);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(678, 16);
-            this.panel2.TabIndex = 14;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(407, 387);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(95, 50);
-            this.btnModificar.TabIndex = 13;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(510, 387);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(95, 50);
-            this.btnEliminar.TabIndex = 12;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnAñadir
             // 
@@ -85,22 +54,7 @@ namespace PresentacionInicioSesion
             this.btnAñadir.TabIndex = 11;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(73, 98);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(602, 26);
-            this.txtBuscar.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Buscar";
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // panel1
             // 
@@ -120,6 +74,7 @@ namespace PresentacionInicioSesion
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label2
             // 
@@ -131,26 +86,110 @@ namespace PresentacionInicioSesion
             this.label2.TabIndex = 0;
             this.label2.Text = "Agregar Herramienta";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Codigo de Herramienta";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(16, 132);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(342, 26);
+            this.txtCodigo.TabIndex = 18;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(384, 132);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(331, 26);
+            this.txtNombre.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(380, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Nombre";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(179, 191);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(298, 26);
+            this.txtMarca.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(175, 168);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 20);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Marca";
+            // 
+            // txtMedida
+            // 
+            this.txtMedida.Location = new System.Drawing.Point(16, 191);
+            this.txtMedida.Name = "txtMedida";
+            this.txtMedida.Size = new System.Drawing.Size(143, 26);
+            this.txtMedida.TabIndex = 24;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 20);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Medida";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(16, 252);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(711, 120);
+            this.txtDescripcion.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 229);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 20);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Descripcion";
+            // 
             // FrmModuloTallerAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 470);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dtgRefacciones);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnAñadir);
-            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtMedida);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnAñadir);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmModuloTallerAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmModuloTallerAdd";
-            ((System.ComponentModel.ISupportInitialize)(this.dtgRefacciones)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -159,16 +198,19 @@ namespace PresentacionInicioSesion
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dtgRefacciones;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAñadir;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtMedida;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label6;
     }
 }

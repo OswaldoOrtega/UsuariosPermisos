@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{674C2CD1-156B-4F64-BDEA-2377044FDD0C}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PresentacionInicioSesion</RootNamespace>
     <AssemblyName>PresentacionInicioSesion</AssemblyName>
@@ -29,6 +29,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -54,6 +57,12 @@
     </Compile>
     <Compile Include="FrmModuloRefaccionAdd.Designer.cs">
       <DependentUpon>FrmModuloRefaccionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModuloRefaccionModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModuloRefaccionModificar.Designer.cs">
+      <DependentUpon>FrmModuloRefaccionModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmModuloTaller.cs">
       <SubType>Form</SubType>
@@ -129,6 +138,9 @@
     <EmbeddedResource Include="FrmModuloRefaccionAdd.resx">
       <DependentUpon>FrmModuloRefaccionAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmModuloRefaccionModificar.resx">
+      <DependentUpon>FrmModuloRefaccionModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmModuloTaller.resx">
       <DependentUpon>FrmModuloTaller.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +149,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPermisoModuloRefacciones.resx">
       <DependentUpon>FrmPermisoModuloRefacciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPermisoModuloRefaccionesAdd.resx">
+      <DependentUpon>FrmPermisoModuloRefaccionesAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPermisosModuloTaller.resx">
+      <DependentUpon>FrmPermisosModuloTaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPermisosModuloTallerAdd.resx">
+      <DependentUpon>FrmPermisosModuloTallerAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

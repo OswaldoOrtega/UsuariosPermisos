@@ -13,7 +13,7 @@ namespace AccesosDatos
         Base b = new Base("localhost","root","","Permisosusuarios",3306);
         public void Borrar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            b.comando(string.Format("call deleteusuario({0})",Entidad.Idusuario));
         }
 
         public void Guardar(dynamic Entidad)
@@ -30,7 +30,7 @@ namespace AccesosDatos
 
         public DataSet Mostrar(string filtro)
         {
-            throw new NotImplementedException();
+            return b.Obtener(string.Format("call showusuario('%{0}%')", filtro), "usuarios");
         }
     }
 }

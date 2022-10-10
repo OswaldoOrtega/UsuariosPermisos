@@ -13,10 +13,17 @@ namespace Manejadores
     public class ManejadorPermisosModuloRefaccion : IManejador
     {
         AccesoDatosPermisosModuloRefaccion apmr = new AccesoDatosPermisosModuloRefaccion();
+        AccesoDatosUsuarios adu = new AccesoDatosUsuarios();
         Grafico g = new Grafico();
         public void Borrar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            DialogResult rs = MessageBox.Show(
+                 string.Format("¿Está seguro de borrar {0}",
+                 Entidad.FKidusuario),
+                 "!Atención", MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+                apmr.Borrar(Entidad);
         }
 
         public void Guardar(dynamic Entidad)
@@ -27,20 +34,20 @@ namespace Manejadores
 
         public void Modificar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Mostrar(DataGridView tabla, string filtro)
         {
             tabla.Columns.Clear();
             tabla.RowTemplate.Height = 30;
-            tabla.DataSource = apmr.Mostrar(filtro).Tables["Usuarios"];
+            tabla.DataSource = apmr.Mostrar(filtro).Tables["permisosrefaccion"];
             
         }
         public void ExtraerUsuario(ComboBox caja)
         {
-            caja.DataSource = apmr.Mostrar("").Tables["usuarios"];
-            caja.DisplayMember = "Nombre";
+            caja.DataSource = adu.Mostrar("").Tables["usuarios"];
+            caja.DisplayMember = "nombre";
             caja.ValueMember = "idusuario";
         }
     }

@@ -32,7 +32,10 @@ namespace Manejadores
 
         public void Mostrar(DataGridView tabla, string filtro)
         {
-            throw new NotImplementedException();
+            tabla.Columns.Clear();
+            tabla.RowTemplate.Height = 30;
+            tabla.DataSource =
+                au.Mostrar(filtro).Tables["usuarios"];
         }
     }
 }

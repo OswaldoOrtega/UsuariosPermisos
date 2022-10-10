@@ -50,6 +50,8 @@ namespace PresentacionInicioSesion
             this.dtgPermisosRefaccion.Name = "dtgPermisosRefaccion";
             this.dtgPermisosRefaccion.Size = new System.Drawing.Size(703, 204);
             this.dtgPermisosRefaccion.TabIndex = 23;
+            this.dtgPermisosRefaccion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPermisosRefaccion_CellClick);
+            this.dtgPermisosRefaccion.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPermisosRefaccion_CellEnter);
             // 
             // panel2
             // 

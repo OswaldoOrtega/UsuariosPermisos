@@ -43,7 +43,7 @@ namespace PresentacionInicioSesion
             this.txtA = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtIdPermisos = new System.Windows.Forms.TextBox();
+            this.txtPermisos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -170,12 +170,12 @@ namespace PresentacionInicioSesion
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtIdPermisos
+            // txtPermisos
             // 
-            this.txtIdPermisos.Location = new System.Drawing.Point(4, 113);
-            this.txtIdPermisos.Name = "txtIdPermisos";
-            this.txtIdPermisos.Size = new System.Drawing.Size(210, 26);
-            this.txtIdPermisos.TabIndex = 32;
+            this.txtPermisos.Location = new System.Drawing.Point(4, 113);
+            this.txtPermisos.Name = "txtPermisos";
+            this.txtPermisos.Size = new System.Drawing.Size(210, 26);
+            this.txtPermisos.TabIndex = 32;
             // 
             // label3
             // 
@@ -191,7 +191,7 @@ namespace PresentacionInicioSesion
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 282);
-            this.Controls.Add(this.txtIdPermisos);
+            this.Controls.Add(this.txtPermisos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtA);
@@ -234,7 +234,7 @@ namespace PresentacionInicioSesion
         private System.Windows.Forms.TextBox txtA;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtIdPermisos;
+        private System.Windows.Forms.TextBox txtPermisos;
         private System.Windows.Forms.Label label3;
     }
 }

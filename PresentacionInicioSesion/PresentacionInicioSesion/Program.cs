@@ -12,7 +12,7 @@ namespace PresentacionInicioSesion
         [STAThread]
         static void Main()
         {
-            Application.Run(new FrmModuloRefaccion());
+            Application.Run(new FrmPermisoModuloRefacciones());
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Manejadores
         {
             DialogResult rs = MessageBox.Show(
                  string.Format("¿Está seguro de borrar {0}",
-                 Entidad.FKidusuario),
+                 Entidad.Idp),
                  "!Atención", MessageBoxButtons.YesNo,
                  MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
@@ -34,7 +34,8 @@ namespace Manejadores
 
         public void Modificar(dynamic Entidad)
         {
-            
+            apmr.Modificar(Entidad);
+            g.Mensaje("Datos Modificados", "!ATENCION", MessageBoxIcon.Information);
         }
 
         public void Mostrar(DataGridView tabla, string filtro)

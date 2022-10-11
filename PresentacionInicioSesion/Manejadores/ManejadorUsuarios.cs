@@ -16,7 +16,7 @@ namespace Manejadores
         Grafico g = new Grafico();
         public void Borrar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+         
         }
 
         public void Guardar(dynamic Entidad)
@@ -27,7 +27,8 @@ namespace Manejadores
 
         public void Modificar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            au.Modificar(Entidad);
+            g.Mensaje("Usuario modificado", "!ATENCION", MessageBoxIcon.Information);
         }
 
         public void Mostrar(DataGridView tabla, string filtro)

@@ -15,7 +15,7 @@ namespace PresentacionInicioSesion
     {
         ManejadorModuloRefaccion mmr = new ManejadorModuloRefaccion();
         public static ModuloRefaccion mr = new ModuloRefaccion(0,"","","");
-        public static PermisosModuloRefaccion p = new PermisosModuloRefaccion("",0,true, true, false, false);
+        public static PermisosModuloRefaccion p = new PermisosModuloRefaccion("",0,"","","","");
         int fila = 0, col = 0;
         public FrmModuloRefaccion()
         {
@@ -30,27 +30,27 @@ namespace PresentacionInicioSesion
         }
         public void Permisos()
         {
-            if (p.Escritura == true)
+            if (p.Escritura == "Admitir")
             {
                 ControlarBotones(true);
             }
-            else if (p.Escritura == false)
+            else if (p.Escritura == "Denegar")
             {
                 ControlarBotones(false);
             }
-            if (p.Eliminacion == true)
+            if (p.Eliminacion == "Admitir")
             {
                 ControlarBotones2(true);
             }
-            else if (p.Eliminacion == false)
+            else if (p.Eliminacion == "Denegar")
             {
                 ControlarBotones2(false);
             }
-            if (p.Actualizacion == true)
+            if (p.Actualizacion == "Admitir")
             {
                 ControlarBotones3(true);
             }
-            else if (p.Actualizacion == false)
+            else if (p.Actualizacion == "Denegar")
             {
                 ControlarBotones3(false);
             }

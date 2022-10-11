@@ -69,6 +69,7 @@ namespace PresentacionInicioSesion
             this.btnModificar.TabIndex = 21;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -78,6 +79,7 @@ namespace PresentacionInicioSesion
             this.btnEliminar.TabIndex = 20;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAñadir
             // 
@@ -155,6 +157,7 @@ namespace PresentacionInicioSesion
             this.Name = "FrmPermisoModuloRefacciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPermisoModuloRefacciones";
+            this.Load += new System.EventHandler(this.FrmPermisoModuloRefacciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPermisosRefaccion)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

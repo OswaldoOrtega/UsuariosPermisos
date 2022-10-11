@@ -25,7 +25,9 @@ namespace AccesosDatos
 
         public void Modificar(dynamic Entidad)
         {
-            throw new NotImplementedException();
+            b.comando(string.Format("call modificarusuario('{0}','{1}','{2}','{3}','{4}',{5})",
+               Entidad.Nombre, Entidad.Apellidop, Entidad.Apellidom, Entidad.Fechanacimiento, Entidad.Rfc,
+               Entidad.Idusuario));
         }
 
         public DataSet Mostrar(string filtro)

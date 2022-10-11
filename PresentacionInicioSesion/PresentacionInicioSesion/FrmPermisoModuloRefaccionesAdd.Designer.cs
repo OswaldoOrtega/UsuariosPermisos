@@ -35,16 +35,16 @@ namespace PresentacionInicioSesion
             this.label1 = new System.Windows.Forms.Label();
             this.cmbUsuario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtL = new System.Windows.Forms.TextBox();
-            this.txtEliminacion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtE = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtA = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtPermisos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbLectura = new System.Windows.Forms.ComboBox();
+            this.cmbEscritura = new System.Windows.Forms.ComboBox();
+            this.cmbActualizacion = new System.Windows.Forms.ComboBox();
+            this.cmbEliminacion = new System.Windows.Forms.ComboBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,9 @@ namespace PresentacionInicioSesion
             // 
             this.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUsuario.FormattingEnabled = true;
+            this.cmbUsuario.Items.AddRange(new object[] {
+            "Admitir",
+            "Denegar"});
             this.cmbUsuario.Location = new System.Drawing.Point(0, 193);
             this.cmbUsuario.Name = "cmbUsuario";
             this.cmbUsuario.Size = new System.Drawing.Size(210, 28);
@@ -105,20 +108,6 @@ namespace PresentacionInicioSesion
             this.label4.TabIndex = 22;
             this.label4.Text = "Lectura";
             // 
-            // txtL
-            // 
-            this.txtL.Location = new System.Drawing.Point(220, 113);
-            this.txtL.Name = "txtL";
-            this.txtL.Size = new System.Drawing.Size(231, 26);
-            this.txtL.TabIndex = 23;
-            // 
-            // txtEliminacion
-            // 
-            this.txtEliminacion.Location = new System.Drawing.Point(480, 193);
-            this.txtEliminacion.Name = "txtEliminacion";
-            this.txtEliminacion.Size = new System.Drawing.Size(231, 26);
-            this.txtEliminacion.TabIndex = 25;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -128,13 +117,6 @@ namespace PresentacionInicioSesion
             this.label5.TabIndex = 24;
             this.label5.Text = "Eliminacion";
             // 
-            // txtE
-            // 
-            this.txtE.Location = new System.Drawing.Point(480, 113);
-            this.txtE.Name = "txtE";
-            this.txtE.Size = new System.Drawing.Size(231, 26);
-            this.txtE.TabIndex = 27;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -143,13 +125,6 @@ namespace PresentacionInicioSesion
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 26;
             this.label6.Text = "Escritura";
-            // 
-            // txtA
-            // 
-            this.txtA.Location = new System.Drawing.Point(220, 193);
-            this.txtA.Name = "txtA";
-            this.txtA.Size = new System.Drawing.Size(231, 26);
-            this.txtA.TabIndex = 29;
             // 
             // label7
             // 
@@ -170,13 +145,6 @@ namespace PresentacionInicioSesion
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtPermisos
-            // 
-            this.txtPermisos.Location = new System.Drawing.Point(4, 113);
-            this.txtPermisos.Name = "txtPermisos";
-            this.txtPermisos.Size = new System.Drawing.Size(210, 26);
-            this.txtPermisos.TabIndex = 32;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -186,21 +154,76 @@ namespace PresentacionInicioSesion
             this.label3.TabIndex = 31;
             this.label3.Text = "Id Permiso";
             // 
+            // cmbLectura
+            // 
+            this.cmbLectura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLectura.FormattingEnabled = true;
+            this.cmbLectura.Items.AddRange(new object[] {
+            "Admitir",
+            "Denegar"});
+            this.cmbLectura.Location = new System.Drawing.Point(220, 122);
+            this.cmbLectura.Name = "cmbLectura";
+            this.cmbLectura.Size = new System.Drawing.Size(249, 28);
+            this.cmbLectura.TabIndex = 33;
+            // 
+            // cmbEscritura
+            // 
+            this.cmbEscritura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEscritura.FormattingEnabled = true;
+            this.cmbEscritura.Items.AddRange(new object[] {
+            "Admitir",
+            "Denegar"});
+            this.cmbEscritura.Location = new System.Drawing.Point(480, 122);
+            this.cmbEscritura.Name = "cmbEscritura";
+            this.cmbEscritura.Size = new System.Drawing.Size(249, 28);
+            this.cmbEscritura.TabIndex = 34;
+            // 
+            // cmbActualizacion
+            // 
+            this.cmbActualizacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbActualizacion.FormattingEnabled = true;
+            this.cmbActualizacion.Items.AddRange(new object[] {
+            "Admitir",
+            "Denegar"});
+            this.cmbActualizacion.Location = new System.Drawing.Point(220, 193);
+            this.cmbActualizacion.Name = "cmbActualizacion";
+            this.cmbActualizacion.Size = new System.Drawing.Size(249, 28);
+            this.cmbActualizacion.TabIndex = 35;
+            // 
+            // cmbEliminacion
+            // 
+            this.cmbEliminacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEliminacion.FormattingEnabled = true;
+            this.cmbEliminacion.Items.AddRange(new object[] {
+            "Admitir",
+            "Denegar"});
+            this.cmbEliminacion.Location = new System.Drawing.Point(480, 193);
+            this.cmbEliminacion.Name = "cmbEliminacion";
+            this.cmbEliminacion.Size = new System.Drawing.Size(249, 28);
+            this.cmbEliminacion.TabIndex = 36;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(0, 122);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(198, 26);
+            this.txtID.TabIndex = 37;
+            // 
             // FrmPermisoModuloRefaccionesAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 282);
-            this.Controls.Add(this.txtPermisos);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.cmbEliminacion);
+            this.Controls.Add(this.cmbActualizacion);
+            this.Controls.Add(this.cmbEscritura);
+            this.Controls.Add(this.cmbLectura);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtA);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtE);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtEliminacion);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtL);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbUsuario);
             this.Controls.Add(this.label1);
@@ -226,15 +249,15 @@ namespace PresentacionInicioSesion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbUsuario;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtL;
-        private System.Windows.Forms.TextBox txtEliminacion;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtE;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtA;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtPermisos;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbLectura;
+        private System.Windows.Forms.ComboBox cmbEscritura;
+        private System.Windows.Forms.ComboBox cmbActualizacion;
+        private System.Windows.Forms.ComboBox cmbEliminacion;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

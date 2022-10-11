@@ -51,3 +51,4 @@ C:\Users\lapas\OneDrive\Documentos\FormulariosPermisosbd\PresentacionInicioSesio
 C:\Users\lapas\OneDrive\Documentos\FormulariosPermisosbd\PresentacionInicioSesion\PresentacionInicioSesion\obj\Debug\PresentacionInicioSesion.exe
 C:\Users\lapas\OneDrive\Documentos\FormulariosPermisosbd\PresentacionInicioSesion\PresentacionInicioSesion\obj\Debug\PresentacionInicioSesion.pdb
 C:\Users\lapas\OneDrive\Documentos\FormulariosPermisosbd\PresentacionInicioSesion\PresentacionInicioSesion\obj\Debug\PresentacionInicioSesion.FrmModuloRefaccionModificar.resources
+C:\Users\lapas\OneDrive\Documentos\FormulariosPermisosbd\PresentacionInicioSesion\PresentacionInicioSesion\obj\Debug\PresentacionInicioSesion.FrmPermisosModuloRefaccionesModificar.resources

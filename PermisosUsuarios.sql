@@ -26,10 +26,11 @@ CREATE TABLE permisosrefaccion(
 idp VARCHAR(100) PRIMARY KEY,
 FKidusuario INT,
 FOREIGN KEY(FKidusuario) REFERENCES usuarios(idusuario),
-lectura BOOL,
-escritura BOOL,
-eliminacion BOOL,
-actualizacion BOOL);
+lectura SET('Admitir','Denegar'),
+escritura SET('Admitir','Denegar'),
+eliminacion SET('Admitir','Denegar'),
+actualizacion SET('Admitir','Denegar'));
+
 
 CREATE TABLE permisosTaller(
 FKidusuario INT,
@@ -158,26 +159,28 @@ delimiter ;;
 CREATE PROCEDURE insertarpermisosrefaccion(
 IN _idp VARCHAR(100),
 IN _FKidusuario INT,
-IN _lectura BOOL,
-IN _escritura BOOL,
-IN _eliminacion BOOL,
-IN _actualizacion BOOL)
+IN _lectura SET('Admitir','Denegar'),
+IN _escritura SET('Admitir','Denegar'),
+IN _eliminacion SET('Admitir','Denegar'),
+IN _actualizacion SET('Admitir','Denegar'))
 BEGIN 
 INSERT INTO permisosrefaccion VALUES(_idp,_FKidusuario,_lectura,_escritura,_eliminacion,_actualizacion);
 END;;
+
+
 
 delimiter ;; 
 CREATE PROCEDURE deletepermisosrefaccion(
 IN _idp VARCHAR(100))
 BEGIN 
-DELETE FROM permisosrefaccion WHERE idp = _idp;
+DELETE FROM permisosrefaccion WHERE idp =_idp ;
 END;;
 
 delimiter ;; 
 CREATE PROCEDURE showpermisosrefaccion(
 _filtro VARCHAR(100))
 BEGIN 
-SELECT u.nombre,u.apellidop,u.apellidom,p.lectura,p.escritura,p.eliminacion,p.actualizacion 
+SELECT p.idp,u.nombre,u.apellidop,u.apellidom,p.lectura,p.escritura,p.eliminacion,p.actualizacion 
 FROM permisosrefaccion as p ,usuarios AS u
 WHERE p.FKidusuario=u.idusuario AND u.nombre LIKE _filtro;
 END;;
@@ -186,10 +189,10 @@ delimiter ;;
 CREATE PROCEDURE modificarpermisosrefaccion(
 IN _idp VARCHAR(100),
 IN _FKidusuario INT,
-IN _lectura BOOL,
-IN _escritura BOOL,
-IN _eliminacion BOOL,
-IN _actualizacion BOOL)
+IN _lectura SET('Admitir','Denegar'),
+IN _escritura SET('Admitir','Denegar'),
+IN _eliminacion SET('Admitir','Denegar'),
+IN _actualizacion SET('Admitir','Denegar'))
 BEGIN
 UPDATE permisosrefaccion SET lectura=_lectura,escritura=_escritura,eliminacion=_eliminacion,actualizacion=_actualizacion WHERE 
 FKidusuario = _FKidusuario AND idp= _idp;

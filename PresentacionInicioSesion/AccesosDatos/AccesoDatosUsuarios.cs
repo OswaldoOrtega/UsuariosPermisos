@@ -10,6 +10,7 @@ namespace AccesosDatos
 {
     public class AccesoDatosUsuarios : IEntidades
     {
+        
         Base b = new Base("localhost","root","","Permisosusuarios",3306);
         public void Borrar(dynamic Entidad)
         {
@@ -25,14 +26,16 @@ namespace AccesosDatos
 
         public void Modificar(dynamic Entidad)
         {
-            b.comando(string.Format("call modificarusuario('{0}','{1}','{2}','{3}','{4}',{5})",
-               Entidad.Nombre, Entidad.Apellidop, Entidad.Apellidom, Entidad.Fechanacimiento, Entidad.Rfc,
-               Entidad.Idusuario));
+            b.comando(string.Format("call modificarusuario({0},'{1}','{2}','{3}','{4}','{5}')",
+               Entidad.Idusuario, Entidad.Nombre, Entidad.Apellidop, Entidad.Apellidom, Entidad.Fechanacimiento, Entidad.Rfc
+               ));
         }
 
         public DataSet Mostrar(string filtro)
         {
             return b.Obtener(string.Format("call showusuario('%{0}%')", filtro), "usuarios");
         }
+
+        
     }
 }

@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatosLogeo.cs" />
     <Compile Include="AccesoDatosModuloRefaccion.cs" />
     <Compile Include="AccesoDatosModuloTaller.cs" />
     <Compile Include="AccesoDatosPermisosModuloRefaccion.cs" />

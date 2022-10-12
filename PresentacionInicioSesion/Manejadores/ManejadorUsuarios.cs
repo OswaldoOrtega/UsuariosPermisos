@@ -16,7 +16,11 @@ namespace Manejadores
         Grafico g = new Grafico();
         public void Borrar(dynamic Entidad)
         {
-         
+            DialogResult rs = MessageBox.Show(string.Format("Estas Segudo de borrar {0}", Entidad.Nombre),
+                   "Atencion", MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+                au.Borrar(Entidad);
         }
 
         public void Guardar(dynamic Entidad)
@@ -38,5 +42,7 @@ namespace Manejadores
             tabla.DataSource =
                 au.Mostrar(filtro).Tables["usuarios"];
         }
+
+        
     }
 }

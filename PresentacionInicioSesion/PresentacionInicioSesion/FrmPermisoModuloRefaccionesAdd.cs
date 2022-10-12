@@ -29,9 +29,8 @@ namespace PresentacionInicioSesion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            mpmr.Guardar(new PermisosModuloRefaccion(txtID.Text,int.Parse(cmbUsuario.SelectedValue.ToString()),
-                cmbLectura.Text,cmbEscritura.Text,
-                cmbEliminacion.Text,cmbActualizacion.Text)) ;
+            mpmr.Guardar(new PermisosModuloRefaccion(int.Parse(txtID.Text),int.Parse(cmbUsuario.SelectedValue.ToString()),
+                cmbLectura.Text,cmbEscritura.Text,cmbEliminacion.Text,cmbActualizacion.Text)) ;
             Close();
         }
     }

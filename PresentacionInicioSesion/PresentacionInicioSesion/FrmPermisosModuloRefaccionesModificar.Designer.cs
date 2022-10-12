@@ -31,8 +31,6 @@ namespace PresentacionInicioSesion
         {
             this.cmbEliminacion = new System.Windows.Forms.ComboBox();
             this.cmbActualizacion = new System.Windows.Forms.ComboBox();
-            this.cmbEscritura = new System.Windows.Forms.ComboBox();
-            this.cmbLectura = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,6 +43,8 @@ namespace PresentacionInicioSesion
             this.label3 = new System.Windows.Forms.Label();
             this.cmbUsuario = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbLectura = new System.Windows.Forms.ComboBox();
+            this.cmbEscritura = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,30 +71,6 @@ namespace PresentacionInicioSesion
             this.cmbActualizacion.Name = "cmbActualizacion";
             this.cmbActualizacion.Size = new System.Drawing.Size(249, 28);
             this.cmbActualizacion.TabIndex = 44;
-            // 
-            // cmbEscritura
-            // 
-            this.cmbEscritura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEscritura.FormattingEnabled = true;
-            this.cmbEscritura.Items.AddRange(new object[] {
-            "Admitir",
-            "Denegar"});
-            this.cmbEscritura.Location = new System.Drawing.Point(480, 145);
-            this.cmbEscritura.Name = "cmbEscritura";
-            this.cmbEscritura.Size = new System.Drawing.Size(249, 28);
-            this.cmbEscritura.TabIndex = 43;
-            // 
-            // cmbLectura
-            // 
-            this.cmbLectura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbLectura.FormattingEnabled = true;
-            this.cmbLectura.Items.AddRange(new object[] {
-            "Admitir",
-            "Denegar"});
-            this.cmbLectura.Location = new System.Drawing.Point(220, 145);
-            this.cmbLectura.Name = "cmbLectura";
-            this.cmbLectura.Size = new System.Drawing.Size(249, 28);
-            this.cmbLectura.TabIndex = 42;
             // 
             // label7
             // 
@@ -174,6 +150,7 @@ namespace PresentacionInicioSesion
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(0, 145);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(198, 26);
@@ -209,11 +186,37 @@ namespace PresentacionInicioSesion
             this.label1.TabIndex = 47;
             this.label1.Text = "Usuario";
             // 
+            // cmbLectura
+            // 
+            this.cmbLectura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLectura.FormattingEnabled = true;
+            this.cmbLectura.Items.AddRange(new object[] {
+            "Admitir",
+            "Denegar"});
+            this.cmbLectura.Location = new System.Drawing.Point(220, 143);
+            this.cmbLectura.Name = "cmbLectura";
+            this.cmbLectura.Size = new System.Drawing.Size(249, 28);
+            this.cmbLectura.TabIndex = 53;
+            // 
+            // cmbEscritura
+            // 
+            this.cmbEscritura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEscritura.FormattingEnabled = true;
+            this.cmbEscritura.Items.AddRange(new object[] {
+            "Admitir",
+            "Denegar"});
+            this.cmbEscritura.Location = new System.Drawing.Point(480, 145);
+            this.cmbEscritura.Name = "cmbEscritura";
+            this.cmbEscritura.Size = new System.Drawing.Size(249, 28);
+            this.cmbEscritura.TabIndex = 54;
+            // 
             // FrmPermisosModuloRefaccionesModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 340);
+            this.Controls.Add(this.cmbEscritura);
+            this.Controls.Add(this.cmbLectura);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbUsuario);
@@ -221,8 +224,6 @@ namespace PresentacionInicioSesion
             this.Controls.Add(this.btnGuardarModificar);
             this.Controls.Add(this.cmbEliminacion);
             this.Controls.Add(this.cmbActualizacion);
-            this.Controls.Add(this.cmbEscritura);
-            this.Controls.Add(this.cmbLectura);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -245,8 +246,6 @@ namespace PresentacionInicioSesion
 
         private System.Windows.Forms.ComboBox cmbEliminacion;
         private System.Windows.Forms.ComboBox cmbActualizacion;
-        private System.Windows.Forms.ComboBox cmbEscritura;
-        private System.Windows.Forms.ComboBox cmbLectura;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -259,5 +258,7 @@ namespace PresentacionInicioSesion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbUsuario;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbLectura;
+        private System.Windows.Forms.ComboBox cmbEscritura;
     }
 }

@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmInicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicioSesion.Designer.cs">
+      <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogeo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogeo.Designer.cs">
+      <DependentUpon>FrmLogeo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogeoAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogeoAdd.Designer.cs">
+      <DependentUpon>FrmLogeoAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModuloRefaccion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +156,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmInicioSesion.resx">
+      <DependentUpon>FrmInicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogeo.resx">
+      <DependentUpon>FrmLogeo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogeoAdd.resx">
+      <DependentUpon>FrmLogeoAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmModuloRefaccion.resx">
       <DependentUpon>FrmModuloRefaccion.cs</DependentUpon>
     </EmbeddedResource>

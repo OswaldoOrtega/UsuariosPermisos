@@ -19,7 +19,7 @@ namespace PresentacionInicioSesion
             InitializeComponent();
             m = new ManejadorPermisosModuloRefaccion();
             m.ExtraerUsuario(cmbUsuario);
-            if(!FrmPermisoModuloRefacciones.pm.Idp.Equals (""))
+            if(FrmPermisoModuloRefacciones.pm.Idp >0)
             {
                 txtID.Text = FrmPermisoModuloRefacciones.pm.Idp.ToString();
                 cmbUsuario.Text = FrmPermisoModuloRefacciones.usuario;
@@ -37,9 +37,8 @@ namespace PresentacionInicioSesion
 
         private void btnGuardarModificar_Click(object sender, EventArgs e)
         {
-            m.Modificar(new PermisosModuloRefaccion(txtID.Text,int.Parse(cmbUsuario.SelectedValue.ToString()),
-                cmbLectura.Text, cmbEscritura.Text, 
-                cmbEliminacion.Text, cmbActualizacion.Text));
+            m.Modificar(new PermisosModuloRefaccion(int.Parse(txtID.Text),int.Parse(cmbUsuario.SelectedValue.ToString()),
+                cmbLectura.Text, cmbEscritura.Text,cmbEliminacion.Text, cmbActualizacion.Text));
             Close();  
         }
     }

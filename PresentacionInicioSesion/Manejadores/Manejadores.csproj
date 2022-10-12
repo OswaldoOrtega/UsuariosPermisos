@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IManejador.cs" />
+    <Compile Include="ManejadorLogeo.cs" />
     <Compile Include="ManejadorModuloRefaccion.cs" />
     <Compile Include="ManejadorModuloTaller.cs" />
     <Compile Include="ManejadorPermisosModuloRefaccion.cs" />

@@ -15,7 +15,7 @@ namespace PresentacionInicioSesion
     {
         ManejadorModuloRefaccion mmr = new ManejadorModuloRefaccion();
         public static ModuloRefaccion mr = new ModuloRefaccion(0,"","","");
-        public static PermisosModuloRefaccion p = new PermisosModuloRefaccion("",0,"","","","");
+        public static PermisosModuloRefaccion p = new PermisosModuloRefaccion(0,0,"","","","");
         int fila = 0, col = 0;
         public FrmModuloRefaccion()
         {

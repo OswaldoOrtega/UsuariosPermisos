@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class PermisosModuloRefaccion
     {
-        public PermisosModuloRefaccion(string idp, int fKidusuario, string lectura, string escritura, string eliminacion, string actualizacion)
+        public PermisosModuloRefaccion(int idp, int fKidusuario, string lectura, string escritura, string eliminacion, string actualizacion)
         {
             Idp = idp;
             FKidusuario = fKidusuario;
@@ -18,7 +18,7 @@ namespace Entidades
             Actualizacion = actualizacion;
         }
 
-        public string Idp { get; set; }
+        public int Idp { get; set; }
         public int FKidusuario { get; set; }
         public string Lectura { get; set; }
         public string Escritura { get; set; }

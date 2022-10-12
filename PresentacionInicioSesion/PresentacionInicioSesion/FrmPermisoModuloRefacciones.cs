@@ -14,7 +14,7 @@ namespace PresentacionInicioSesion
     public partial class FrmPermisoModuloRefacciones : Form
     {
         ManejadorPermisosModuloRefaccion mpmr;
-        public static PermisosModuloRefaccion pm = new PermisosModuloRefaccion("",0,"","","","");
+        public static PermisosModuloRefaccion pm = new PermisosModuloRefaccion(0,0,"","","","");
         public static string usuario = "";
         int fila = 0, col = 0;
         public FrmPermisoModuloRefacciones()
@@ -39,7 +39,7 @@ namespace PresentacionInicioSesion
 
         private void dtgPermisosRefaccion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                pm.Idp = dtgPermisosRefaccion.Rows[fila].Cells[0].Value.ToString();
+                pm.Idp = int.Parse(dtgPermisosRefaccion.Rows[fila].Cells[0].Value.ToString());
                 usuario = dtgPermisosRefaccion.Rows[fila].Cells[1].Value.ToString();
                 pm.Lectura = dtgPermisosRefaccion.Rows[fila].Cells[2].Value.ToString();
                  pm.Escritura = dtgPermisosRefaccion.Rows[fila].Cells[3].Value.ToString();

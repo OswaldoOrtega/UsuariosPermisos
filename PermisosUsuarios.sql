@@ -7,6 +7,11 @@ apellidom VARCHAR(100),
 fechanacimiento VARCHAR(13),
 rfc VARCHAR(13));
 
+CREATE TABLE Logeo(
+idl INT PRIMARY KEY AUTO_INCREMENT,
+FKidusuario INT,
+contraseña VARCHAR(100));
+
 CREATE TABLE ModuloRefaccion(
 codigobarras BIGINT PRIMARY KEY,
 nombre VARCHAR(100),
@@ -62,9 +67,13 @@ INSERT INTO usuarios VALUES(NULL,_nombre,_apellidop,_apellidom,_fechanacimiento,
 ELSE if x=0 AND _idusuarios > 0 then
 UPDATE usuarios SET nombre = _nombre, apellidop = _apellidop, apellidom =_apellidom, fechanacimiento = _fechanacimiento, rfc = _rfc
 WHERE idusuario = _idusuario;
+ELSE 
+UPDATE usuarios SET apellidop = _apellidop, apellidom =_apellidom, fechanacimiento = _fechanacimiento, rfc = _rfc
+WHERE idusuario = _idusuario;
 END if;
 END if;
 END;;
+
 delimiter ;;
 CREATE PROCEDURE deleteusuario(
 IN _idusuario INT)
@@ -78,6 +87,39 @@ BEGIN
 SELECT u.idusuario,u.nombre,u.apellidop,u.apellidom,u.fechanacimiento,u.rfc FROM usuarios u 
 WHERE u.nombre LIKE _filtro;
 END;;
+
+/*--------------------------------------PORCEDURE DE Logeo--------------------------------------------------------*/
+delimiter ;;
+CREATE PROCEDURE insertarLogeo(
+IN _FKidusuario INT,
+IN _contraseña VARCHAR(100),
+IN _idl INT)
+BEGIN 
+DECLARE x INT;
+SELECT COUNT(*) FROM Logeo WHERE idl = _idl INTO X;
+if x=0 AND _idl < 0 then 
+INSERT INTO Logeo VALUES(NULL,_FKidusuario,_contraseña);
+ELSE if x=0 AND _idl > 0 then
+UPDATE Logeo SET FKidusuario=_FKidusuario ,contraseña = _contraseña WHERE idl = _idl;
+ELSE 
+UPDATE Logeo SET FKidusuario=_FKidusuario, contraseña = _contraseña WHERE idl = _idl;
+END if;
+END if;
+END;;
+
+delimiter ;;
+CREATE PROCEDURE deleteLogeo(
+IN _idl INT)
+BEGIN 
+DELETE FROM Logeo WHERE idl=_idl;
+END;;
+
+delimiter ;;
+CREATE PROCEDURE showLogeo(
+IN _filtro VARCHAR(100))
+BEGIN 
+SELECT l.idl,u.nombre,l.contraseña AS password FROM Logeo as l, usuarios as u WHERE l.FKidusuario = u.idusuario AND u.nombre LIKE _filtro;
+END ;;
 
 /*--------------------------------------PORCEDURE DE MODULOTREFACCION--------------------------------------------------------*/
 
@@ -180,11 +222,11 @@ delimiter ;;
 CREATE PROCEDURE showpermisosrefaccion(
 _filtro VARCHAR(100))
 BEGIN 
-SELECT p.idp,u.nombre,u.apellidop,u.apellidom,p.lectura,p.escritura,p.eliminacion,p.actualizacion 
+SELECT p.idp,u.nombre,p.lectura,p.escritura,p.eliminacion,p.actualizacion 
 FROM permisosrefaccion as p ,usuarios AS u
 WHERE p.FKidusuario=u.idusuario AND u.nombre LIKE _filtro;
-END;;
-
+END;
+DROP PROCEDURE showpermisosrefaccion;
 delimiter ;; 
 CREATE PROCEDURE modificarpermisosrefaccion(
 IN _idp VARCHAR(100),
@@ -197,7 +239,7 @@ BEGIN
 UPDATE permisosrefaccion SET lectura=_lectura,escritura=_escritura,eliminacion=_eliminacion,actualizacion=_actualizacion WHERE 
 FKidusuario = _FKidusuario AND idp= _idp;
 END;;
-
+DROP PROCEDURE modificarpermisosrefaccion;
 /*--------------------------------------PORCEDURE DE PERMISOSMODULOTALLER---------------------------------------------- */
 delimiter ;;
 CREATE PROCEDURE insertarpermisostaller(
@@ -241,5 +283,6 @@ BEGIN
 UPDATE permisosTaller SET lectura=_lectura,escritura=_escritura,eliminacion=_eliminacion,actualizacion=_actualizacion WHERE 
 FKidusuario = _FKidusuario AND FKcodigoherramientas = _FKcodigoherramientas;
 END;
+
 
 
